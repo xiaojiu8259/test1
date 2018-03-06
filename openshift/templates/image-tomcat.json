@@ -1,30 +1,37 @@
 {
-  "kind": "ImageStream",
+  "kind": "ImageStreamList",
   "apiVersion": "v1",
-  "metadata": {
-	"name": "Tomcat",
-	"annotations": {
-	  "openshift.io/display-name": "Apache Tomcat 8.5.5"
-	}
-  },
-  "spec": {
-	"tags": [
-	  {
-		"name": "latest",
-		"annotations": {
-		  "openshift.io/display-name": "Tomcat (Latest)",
-		  "openshift.io/provider-display-name": "Red Hat, Inc.",
-		  "description": "Build and run Tomcat applications on CentOS 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/openshift-s2i/s2i-wildfly/blob/master/README.md.\n\nWARNING: By selecting this tag, your application will automatically update to use the latest version of Tomcat available on OpenShift, including major versions updates.",
-		  "iconClass": "icon-apache",
-		  "tags": "builder,tomcat,java",
-		  "supports":"jee,java",
-		  "sampleRepo": "https://github.com/xiaojiu8259/test1.git"
-		},
-		"from": {
-		  "kind": "DockerImage",
-		  "name": "openshift/tomcat:latest"
-		}
-	  }
-	]
-  }
+  "metadata": {},
+  "items": [
+    {
+      "kind": "ImageStream",
+       "apiVersion": "v1",
+       "metadata": {
+          "name": "Tomcat",
+          "annotations": {
+            "openshift.io/display-name": "Apache Tomcat 8.5.5"
+          }
+       },
+       "spec": {
+          "tags": [
+            {
+               "name": "latest",
+               "annotations": {
+                 "openshift.io/display-name": "Tomcat (Latest)",
+                 "openshift.io/provider-display-name": "Red Hat, Inc.",
+                 "description": "Build and run Tomcat applications on CentOS 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/openshift-s2i/s2i-wildfly/blob/master/README.md.\n\nWARNING: By selecting this tag, your application will automatically update to use the latest version of Tomcat available on OpenShift, including major versions updates.",
+                 "iconClass": "icon-apache",
+                 "tags": "builder,tomcat,java",
+                 "supports":"jee,java",
+                 "sampleRepo": "https://github.com/xiaojiu8259/test1.git"
+               },
+               "from": {
+                 "kind": "DockerImage",
+                 "name": "openshift/tomcat:latest"
+               }
+            }
+          ]
+       }
+     }
+   ]
 }

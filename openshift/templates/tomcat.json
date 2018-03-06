@@ -234,7 +234,7 @@
       "displayName": "Git Repository URL",
       "description": "The URL of the repository with your application source code.",
       "required": true,
-      "value": "https://github.com/openshift/tomcat-ex.git"
+      "value": "https://github.com/xiaojiu8259/test1.git"
     },
     {
       "name": "SOURCE_REPOSITORY_REF",

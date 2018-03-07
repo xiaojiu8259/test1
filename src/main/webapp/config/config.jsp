@@ -1,5 +1,5 @@
 <%
-boolean UseCas=true; 
+boolean UseCas=false; 
 %>
 <%! public static class LoginCheck
 {

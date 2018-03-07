@@ -54,10 +54,16 @@ if(loginFlag)
 		<td><input type="password" name="pwd" id="pwd"/></td>
 	  </tr>
 	  <tr>
-		<td colspan="2" align="center"><input type="button" value="登录" onClick="this.form.submit();"/></td>
+		<td><input type="button" value="登录" onClick="this.form.submit();"/></td>
+		<td><input type="button" value="Mysql工具" onClick="tomysql()"/></td>
 	  </tr>
 	</table>
 </form>
 </center>
+<script language="javascript">
+function tomysql() {
+	window.location.href = "mysql/tools.jsp";
+}
+</script>
 </body>
 </html>

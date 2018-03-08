@@ -1,5 +1,6 @@
 <%@ page session="true" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ include file="../config/config.jsp"%>
+<%@page import="java.util.Map" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,6 @@
 </head>
 <body>
 <script type="text/javascript">
-
 function testConn() {
 	$.post("testconn.jsp",
 	  {
@@ -58,27 +58,42 @@ function reback() {
 	window.location.href = "../index.jsp";
 }
 </script>
+<%
+	Map<String, String> map = System.getenv();
+	String dbname = "mysql";
+	String host = "localhost";
+	String port = "3306";
+	String username = "root";
+	String passwd = "root";
+	if(map != null) {
+		dbname = map.get("DATABASE_NAME");
+		host = map.get("MYSQL_SERVICE_HOST");
+		port = map.get("MYSQL_SERVICE_PORT");
+		username = map.get("DATABASE_USER");
+		passwd = map.get("DATABASE_PASSWORD");
+	}
+%>
 <center>
     <table id="contable" width="500" border="1" cellpadding="0" cellspacing="0">
 	  <tr>
 		<td><font color="red">*</font>&nbsp;数据库名称：</td>
-		<td><input type="text" name="dbname" id="dbname" value="default"/></td>
+		<td><input type="text" name="dbname" id="dbname" value="<%=dbname%>"/></td>
 	  </tr>
 	  <tr>
 		<td><font color="red">*</font>&nbsp;主机名或IP地址：</td>
-		<td><input type="text" name="host" id="host" value="localhost"/></td>
+		<td><input type="text" name="host" id="host" value="<%=host%>"/></td>
 	  </tr>
 	  <tr>
 		<td><font color="red">*</font>&nbsp;端口号</td>
-		<td><input type="text" name="port" id="port" value="3306"/></td>
+		<td><input type="text" name="port" id="port" value="<%=port%>"/></td>
 	  </tr>
 	  <tr>
 		<td><font color="red">*</font>&nbsp;用户名：</td>
-		<td><input type="text" name="dbusername" id="username" value="root"/></td>
+		<td><input type="text" name="dbusername" id="username" value="<%=username%>"/></td>
 	  </tr>
 	  <tr>
 		<td><font color="red">*</font>&nbsp;密码</td>
-		<td><input type="text" name="dbpwd" id="pwd" value="niujunlong1"/></td>
+		<td><input type="text" name="dbpwd" id="pwd" value="<%=passwd%>"/></td>
 	  </tr>
 	  <tr>
 		<td colspan=2 align="center">

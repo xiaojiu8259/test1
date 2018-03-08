@@ -24,6 +24,9 @@ function testConn() {
 			  $("#contable").hide();
 			$("#sqltalbe").show();
 		   }
+		   else {
+			  alert('data:'+$.trim(data));
+		   }
 	  });
 }
 

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -132,5 +133,15 @@ public class Tools {
 			conn.close();
 		}
 		return false;
+	}
+	
+	public String getEnv() {
+		String tmp="";
+		Map<String, String> map = System.getenv();
+        for(Iterator<String> itr = map.keySet().iterator();itr.hasNext();){
+            String key = itr.next();
+            tmp += key + "=" + map.get(key)+"@@";
+        }
+        return tmp;
 	}
 }

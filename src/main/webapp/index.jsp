@@ -5,6 +5,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>登录</title>
+	<script src="jquery-3.3.1.min.js" type="text/javascript"></script>
 </head>
 <body>
 <%
@@ -54,15 +55,27 @@ if(loginFlag)
 		<td><input type="password" name="pwd" id="pwd"/></td>
 	  </tr>
 	  <tr>
-		<td><input type="button" value="登录" onClick="this.form.submit();"/></td>
-		<td><input type="button" value="Mysql工具" onClick="tomysql()"/></td>
+		<td cospan="2" align="center">
+			<input type="button" value="登录" onClick="this.form.submit();"/>
+			<input type="button" value="Mysql工具" onClick="tomysql()"/>
+			<input type="button" value="环境变量" onClick="getenv()"/>
+		</td>
 	  </tr>
 	</table>
+	<p id="env"></p>
 </form>
 </center>
 <script language="javascript">
 function tomysql() {
 	window.location.href = "mysql/tools.jsp";
+}
+
+function getenv() {
+	$.post("getenv.jsp",
+	  {},
+	  function(data,status){
+		  $("#env").html(data);
+	  });
 }
 </script>
 </body>

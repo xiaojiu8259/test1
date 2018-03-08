@@ -119,7 +119,7 @@ public class Tools {
 	public boolean initDb() throws Exception {
 		Connection conn =  this.getConn();
 		if(conn!=null) {
-			String creatsql="CREATE TABLE `table_dummy2` ("
+			String creatsql="CREATE TABLE `table_dummy` ("
   +" `ID` int(12) NOT NULL AUTO_INCREMENT COMMENT '唯一标识',"
   +" `KEY` varchar(2000) DEFAULT '' COMMENT 'KEY',"
   +" PRIMARY KEY (`ID`) "
@@ -128,7 +128,7 @@ public class Tools {
 			if(0 == stmt.executeUpdate(creatsql))
 			{
 				System.out.println("成功创建表！");
-				String insertSql="INSERT INTO `table_dummy2` VALUES ('1', 'MYSQL_TEST_NIUJL2')";
+				String insertSql="INSERT INTO `table_dummy` VALUES ('1', 'MYSQL_TEST_NIUJL2')";
 				if(1 == stmt.executeUpdate(insertSql))
 				{
 					System.out.println("成功添加记录！");

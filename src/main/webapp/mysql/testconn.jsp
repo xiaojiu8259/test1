@@ -2,6 +2,7 @@
 <%@ include file="../config/config.jsp"%>
 <%@page import="com.eccl.Tools" %>
 <%
+	String dbname = request.getParameter("dbname")==null?"":request.getParameter("dbname");	
 	String host = request.getParameter("host")==null?"":request.getParameter("host");
 	String port = request.getParameter("port")==null?"":request.getParameter("port");
 	String username = request.getParameter("username")==null?"":request.getParameter("username");
@@ -12,7 +13,7 @@
 	System.out.println("pwd=="+pwd);
 	
 	Tools tool = new Tools();
-	boolean f = tool.testConnection(host,port,username,pwd);
+	boolean f = tool.testConnection(host,port,username,pwd,dbname);
 	if(f) {
 		out.print("true");
 	}

@@ -22,6 +22,7 @@ public class Tools {
 	private static String PORT;
 	private static String USERNAME;
 	private static String PASSWORD;
+	private static String DBNAME;
 
 	public void setHost(String host) {
 		HOST = host;
@@ -38,12 +39,16 @@ public class Tools {
 	public void setPassword(String password) {
 		PASSWORD = password;
 	}
+	
+	public void setDBname(String dbname) {
+		DBNAME = dbname;
+	}
 
 	public Connection getConn() {
 		Connection conn = null;
 		try
 		{
-			String DB_URL = "jdbc:mysql://"+this.HOST+":"+this.PORT+"/test";
+			String DB_URL = "jdbc:mysql://"+this.HOST+":"+this.PORT+"/"+this.DBNAME;
 			// 注册 JDBC 驱动
 			Class.forName("com.mysql.jdbc.Driver");
 			// 打开链接
@@ -63,15 +68,16 @@ public class Tools {
 		return null;
 	}
 	
-	public boolean testConnection(String host,String port,String username,String passwd) throws Exception {
+	public boolean testConnection(String host,String port,String username,String passwd,String dbname) throws Exception {
 		this.setHost(host);
 		this.setPort(port);
 		this.setUserName(username);
 		this.setPassword(passwd);
+		this.setDBname(dbname);
 		
 		Connection conn =  this.getConn();
 		if(conn!=null) {
-			conn.close();
+			//conn.close();
 			return true;
 		}
 		return false;

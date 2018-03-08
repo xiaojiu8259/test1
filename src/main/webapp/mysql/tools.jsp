@@ -13,6 +13,7 @@
 function testConn() {
 	$.post("testconn.jsp",
 	  {
+		dbname:$("#dbname").val(),
 		host:$("#host").val(),
 	    port:$("#port").val(),
 	    username:$("#username").val(),
@@ -59,6 +60,10 @@ function reback() {
 </script>
 <center>
     <table id="contable" width="500" border="1" cellpadding="0" cellspacing="0">
+	  <tr>
+		<td><font color="red">*</font>&nbsp;数据库名称：</td>
+		<td><input type="text" name="dbname" id="dbname" value="default"/></td>
+	  </tr>
 	  <tr>
 		<td><font color="red">*</font>&nbsp;主机名或IP地址：</td>
 		<td><input type="text" name="host" id="host" value="localhost"/></td>

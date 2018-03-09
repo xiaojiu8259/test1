@@ -30,7 +30,7 @@ metadata:
   creationTimestamp: '2018-03-09T11:43:30Z'
   name: tomcat-mysql-example
   namespace: openshift
-  resourceVersion: '10706'
+  resourceVersion: ''
   selfLink: >-
     /apis/template.openshift.io/v1/namespaces/openshift/templates/tomcat-mysql-example
   uid: 77e8c7e3-ff69-11e7-8edc-000c2900f509

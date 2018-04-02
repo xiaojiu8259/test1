@@ -58,6 +58,7 @@ if(loginFlag)
 		<td cospan="2" align="center">
 			<input type="button" value="登录" onClick="this.form.submit();"/>
 			<input type="button" value="Mysql工具" onClick="tomysql()"/>
+			<input type="button" value="Oracle" onClick="tooracle()"/>
 			<input type="button" value="环境变量" onClick="getenv()"/>
 		</td>
 	  </tr>
@@ -68,6 +69,9 @@ if(loginFlag)
 <script language="javascript">
 function tomysql() {
 	window.location.href = "mysql/tools.jsp";
+}
+function tooracle() {
+	window.location.href = "oracle/tools.jsp";
 }
 
 function getenv() {

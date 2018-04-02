@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>test1 Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <url>http://maven.eccl.app</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -48,7 +48,7 @@
 	<dependency>
 	    <groupId>com.oracle</groupId>
 	    <artifactId>ojdbc6</artifactId>
-	    <version>11.2.0</version>
+	    <version>12.1.0.2</version>
 	</dependency>
   </dependencies>
   <build>

@@ -29,7 +29,7 @@
       },
       "stringData" : {
         "database-user" : "${DATABASE_USER}",
-        "database-password" : "${DATABASE_PASSWORD}",
+        "database-password" : "${DATABASE_PASSWORD}"
       }
     },
 	{

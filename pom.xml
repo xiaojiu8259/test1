@@ -8,6 +8,7 @@
   <name>test1 Maven Webapp</name>
   <url>http://maven.eccl.app</url>
   <build>
+    <finalName>test1</finalName>
 	<plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -67,7 +68,4 @@
 	    <version>12.1.0.2</version>
 	</dependency>
   </dependencies>
-  <build>
-    <finalName>test1</finalName>
-  </build>
 </project>

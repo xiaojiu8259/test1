@@ -7,8 +7,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import oracle.jdbc.*;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -45,7 +44,7 @@ public class OracleTools {
        Connection c = null;
        try {
            Class.forName("oracle.jdbc.driver.OracleDriver");
-           // ÒªÊÇµ¼ÈëÇý¶¯Ã»ÓÐ³É¹¦µÄ»°¶¼ÊÇ»á³öÏÖclassnotfoundException.×Ô¼º¿´¿´ÊÇ²»ÊÇÄÄÀï´íÁË,ÀýÈçclasspathÕâÐ©ÉèÖÃ
+           // Òªï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð³É¹ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½classnotfoundException.ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½classpathï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½
        } catch (ClassNotFoundException e) {
            e.printStackTrace();
        }
@@ -76,15 +75,15 @@ public class OracleTools {
 	}
 	
 	private String convertList(ResultSet rs) throws SQLException{
-		// ½«Map×ª»»ÎªJSONArrayÊý¾Ý
+		// ï¿½ï¿½Map×ªï¿½ï¿½ÎªJSONArrayï¿½ï¿½ï¿½ï¿½
         JSONArray jArray = new JSONArray();
         
-		ResultSetMetaData md = rs.getMetaData();//»ñÈ¡¼üÃû
-		int columnCount = md.getColumnCount();//»ñÈ¡ÐÐµÄÊýÁ¿
+		ResultSetMetaData md = rs.getMetaData();//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+		int columnCount = md.getColumnCount();//ï¿½ï¿½È¡ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
 		while (rs.next()) {
-			HashMap<String,String> rowData = new HashMap<String,String>();//ÉùÃ÷Map
+			HashMap<String,String> rowData = new HashMap<String,String>();//ï¿½ï¿½ï¿½ï¿½Map
 			for (int i = 1; i <= columnCount; i++) {
-				rowData.put(md.getColumnName(i), rs.getString(i));//»ñÈ¡¼üÃû¼°Öµ
+				rowData.put(md.getColumnName(i), rs.getString(i));//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 			}
 			jArray.put(rowData);
 		}
@@ -99,7 +98,7 @@ public class OracleTools {
 			Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             String al = convertList(rs);
-            // Íê³Éºó¹Ø±Õ
+            // ï¿½ï¿½Éºï¿½Ø±ï¿½
             rs.close();
             stmt.close();
             conn.close();
